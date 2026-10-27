@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Health360 | Story outline{% endblock %}
+{% block content %}
+<section class="view-heading"><div><p class="eyebrow">Population health / narrative</p><h1>Four-scene story outline</h1></div><a class="back-link" href="{{ url_for('index') }}">Project home</a></section>
+<div class="cards story-cards">
+  <article class="card"><span class="scene-number">01</span><h2>Population and data coverage</h2><p>Introduce the approved source, population size, time period, data completeness, and limitations. Do not use synthetic demo counts as findings.</p></article>
+  <article class="card"><span class="scene-number">02</span><h2>Age and BMI patterns</h2><p>Compare condition prevalence across supported age groups and BMI categories, with denominators and category definitions visible.</p></article>
+  <article class="card"><span class="scene-number">03</span><h2>Factors and conditions</h2><p>Explore clinical indicators, lifestyle, symptoms, and factor-condition comparisons as descriptive population patterns.</p></article>
+  <article class="card"><span class="scene-number">04</span><h2>Questions for follow-up</h2><p>Summarize segments that qualified teams may review, state uncertainty, and identify questions for further research.</p></article>
+</div>
+<p class="view-note">This is a Flask-rendered story outline, not a published Tableau story. Populate it with approved analysis only.</p>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Health360 | Population health{% endblock %}
+{% block content %}
+<section class="home-hero">
+  <div class="hero-copy">
+    <p class="eyebrow">HEALTH360 · POPULATION VIEW</p>
+    <h1>See health patterns<br>at a glance.</h1>
+    <p>Explore a simple demo of heart disease, diabetes and stroke data.</p>
+    <div class="home-actions">
+      <a class="button primary" href="{{ url_for('dashboard') }}">Open dashboard <span aria-hidden="true">→</span></a>
+      <a class="button" href="{{ url_for('download_demo_data') }}">Download demo CSV</a>
+    </div>
+  </div>
+  <div class="hero-stat"><span class="stat-number">320</span><span class="stat-label">synthetic demo<br>records</span><span class="stat-mark" aria-hidden="true">H</span></div>
+</section>
+<section class="home-grid" aria-label="Explore Health360">
+  <a class="home-card" href="{{ url_for('dashboard') }}"><span class="home-card-icon" aria-hidden="true">▥</span><span><strong>Dashboard</strong><small>Compare conditions and factors</small></span><span class="card-arrow" aria-hidden="true">↗</span></a>
+  <a class="home-card" href="#storyline"><span class="home-card-icon story-icon" aria-hidden="true">◷</span><span><strong>Storyline</strong><small>Four steps through the analysis</small></span><span class="card-arrow" aria-hidden="true">↓</span></a>
+</section>
+<section class="home-story" id="storyline" aria-labelledby="story-title">
+  <div class="story-heading"><div><p class="eyebrow">THE ANALYSIS, IN FOUR STEPS</p><h2 id="story-title">Storyline</h2></div><span class="scene-count">4 scenes</span></div>
+  <div class="scene-grid">
+    <article class="scene-card"><span class="scene-number">01</span><h3>Population</h3><p>Who is represented?</p></article>
+    <article class="scene-card"><span class="scene-number">02</span><h3>Compare</h3><p>How do conditions vary by age and BMI?</p></article>
+    <article class="scene-card"><span class="scene-number">03</span><h3>Explore</h3><p>What patterns appear across health factors?</p></article>
+    <article class="scene-card"><span class="scene-number">04</span><h3>Follow up</h3><p>What needs qualified review or more data?</p></article>
+  </div>
+  {% if tableau_views.story %}<a class="published-story" href="{{ tableau_views.story.url }}" target="_blank" rel="noopener noreferrer">Open published Tableau story ↗</a>{% endif %}
+</section>
+<aside class="home-caveat"><span aria-hidden="true">ⓘ</span><span><strong>Demo data only.</strong> For exploring the interface, not for health conclusions or care decisions.</span></aside>
+{% endblock %}

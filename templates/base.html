@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f3">
+  <title>{% block title %}Health360{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='overrides.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='visual.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='storyline.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ url_for('index') }}"><span class="brand-mark">H</span><span>health<strong>360</strong></span></a>
+    <nav aria-label="Project navigation">
+      <a href="{{ url_for('dashboard') }}">Dashboard</a>
+      <a href="{{ url_for('index') }}#storyline">Storyline</a>
+    </nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer>Synthetic demo · For exploration only · Not for diagnosis or care decisions</footer>
+</body>
+</html>

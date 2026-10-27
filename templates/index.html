@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Health360 | Population health{% endblock %}
+{% block content %}
+<section class="intro">
+  <p class="eyebrow">Population health</p>
+  <h1>Explore chronic disease patterns</h1>
+  <p>Health360 combines a Tableau dashboard and story with a browser prototype for population-level exploration of heart disease, diabetes, stroke, and related factors.</p>
+  <div class="actions"><a class="button primary" href="{{ url_for('dashboard') }}">Open dashboard</a><a class="button" href="{{ url_for('story') }}">View story</a></div>
+</section>
+<section class="cards" aria-label="Project components">
+  <article class="card"><h2>Interactive dashboard</h2><p>Compare synthetic condition prevalence by age and BMI, then explore clinical, lifestyle, and symptom patterns.</p><a href="{{ url_for('dashboard') }}">Open dashboard →</a></article>
+  <article class="card"><h2>Story outline</h2><p>Review the four planned scenes for the future Tableau story. The outline is a project guide, not a story based on real findings.</p><a href="{{ url_for('story') }}">View story outline →</a></article>
+  <article class="card"><h2>Browser prototype</h2><p>Explore the synthetic interface while the approved data source and Tableau workbook are being prepared.</p><a href="{{ url_for('prototype') }}">Open prototype →</a></article>
+  <article class="card"><h2>Tableau demo data</h2><p>Download the same deterministic synthetic cohort used by the prototype, then connect Tableau to the CSV file.</p><a href="{{ url_for('download_demo_data') }}">Download synthetic CSV →</a></article>
+</section>
+<aside class="notice"><strong>Data status:</strong> The dashboard uses synthetic demonstration data. It must not be used to estimate real prevalence or inform care. The Flask frontend runs without Tableau setup; published Tableau views are optional.</aside>
+{% endblock %}

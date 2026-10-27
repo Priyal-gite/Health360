@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Health360 | {{ 'Dashboard' if view_name == 'dashboard' else 'Story' }}{% endblock %}
+{% block content %}
+<section class="view-heading"><div><p class="eyebrow">Population health / {{ view_name }}</p><h1>{{ 'Interactive dashboard' if view_name == 'dashboard' else 'Project story' }}</h1></div><a class="back-link" href="{{ url_for('index') }}">Project home</a></section>
+{% set view_url = tableau_views[view_name] %}
+{% if view_url and tableau_api_url %}
+  <div class="viz-frame" aria-label="Embedded Tableau {{ view_name }}">
+    <tableau-viz src="{{ view_url }}" width="100%" height="850" toolbar="top" hide-tabs>
+      <noscript>Enable JavaScript to display the Tableau {{ view_name }}.</noscript>
+    </tableau-viz>
+  </div>
+{% else %}
+  <section class="setup-card" role="status">
+    <div class="setup-icon" aria-hidden="true">↗</div>
+    <h2>Published Tableau {{ view_name }} not configured</h2>
+    <p>Set the approved Tableau server origin, allowed host, and published {{ view_name }} share URL in your local environment. The page will embed the view after configuration.</p>
+    <p class="small">Tableau authentication and view permissions are enforced by Tableau. Configure access on the Tableau site before sharing this page.</p>
+  </section>
+{% endif %}
+<p class="view-note">Use the embedded view for population-level exploration only. Interpret group differences descriptively; they do not establish cause, diagnosis, or treatment recommendations.</p>
+{% endblock %}

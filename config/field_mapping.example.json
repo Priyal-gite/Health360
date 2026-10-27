@@ -1,0 +1,19 @@
+{
+  "columns": {
+    "age": "age",
+    "bmi": "bmi",
+    "systolic_bp": "systolic_bp",
+    "cholesterol": "cholesterol",
+    "glucose": "glucose",
+    "smoker": "smoker",
+    "alcohol_use": "alcohol_use",
+    "exercise_level": "exercise_level",
+    "fatigue": "fatigue",
+    "chest_pain": "chest_pain",
+    "dizziness": "dizziness",
+    "heart_disease": "heart_disease",
+    "diabetes": "diabetes",
+    "stroke": "stroke",
+    "observation_date": "observation_date"
+  }
+}

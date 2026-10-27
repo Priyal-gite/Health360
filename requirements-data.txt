@@ -1,0 +1,2 @@
+# Install only when approved database extraction is needed.
+SQLAlchemy>=2.0,<3
